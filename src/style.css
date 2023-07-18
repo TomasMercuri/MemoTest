@@ -1,0 +1,12 @@
+body {
+    background: #555;
+}
+
+.juego .col {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    padding: 0;
+}

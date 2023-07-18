@@ -1,9 +1,20 @@
 function ocultarOpciones(){
-    document.querySelector('.opciones').classList.add('visually-hidden');
+    $form.classList.add('visually-hidden');
 }
 
+function mostrarTablero(){
+    document.querySelector('.juego').classList.remove('visually-hidden');
+}
 
+function retornarValorFormulario(){
+    return $form.opcion.value;
+}
 
-document.querySelector('section button').addEventListener('click', function(){
+const $form = document.querySelector('.formulario');
+
+document.querySelector('#comenzar').addEventListener('click', function(){
     ocultarOpciones();
+    setTimeout(mostrarTablero, 500);
+    const opcion = retornarValorFormulario();
+    
 });

@@ -20,24 +20,112 @@
     <div class="title-container container d-flex justify-content-center">
         <h1>MEMOTEST</h1>
     </div>
-    <div class="opciones">
-        <section>
-            <label>Colores</label>
-            <input type="radio" name="opcion" checked>
-        </section>
 
-        <section>
-            <label>Colores</label>
-            <input type="radio" name="opcion">
-        </section>
+    <form class="formulario d-flex justify-content-center align-items-center flex-column">
+        <div class="opciones d-flex">
+            <section>
+                <label>Colores</label>
+                <input type="radio" name="opcion" value="colores" checked>
+            </section>
 
-        <section>
-            <label>Colores</label>
-            <input type="radio" name="opcion">
-        </section>
-        <section>
-            <button type="button">Comenzar</button>
-        </section>
+            <section>
+                <label>Emojis</label>
+                <input type="radio" name="opcion" value="emojis">
+            </section>
+
+            <section>
+                <label>Autos</label>
+                <input type="radio" name="opcion" value="autos">
+            </section>
+        </div>
+        <div>
+            <button type="button" id="comenzar">Comenzar</button>
+        </div>
+    </form>
+
+    <div class="juego d-flex justify-content-center align-items-center visually-hidden">
+        <div class="container bg-danger">
+            <div class="row">
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del primer cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">1</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del segundo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">2</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del tercer cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">3</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del cuarto cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">4</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del quinto cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">5</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del sexto cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">6</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del septimo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">7</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del octavo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">8</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del noveno cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">9</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del decimo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">10</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del undecimo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">11</div>
+                </div>
+                <div class="col">
+                    <div class="parte-trasera">
+                        <img src="" alt="Foto del duodecimo cuadro" class="visually-hidden">
+                    </div>
+                    <div class="parte-delantera">12</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
