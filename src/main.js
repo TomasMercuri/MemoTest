@@ -25,11 +25,20 @@ function mostrarParteTrasera(i){
     document.querySelector(`.cuadro-${i} .parte-trasera`).classList.remove('visually-hidden');
 }
 
+function comprobarCuadrosIguales(cuadroActual, cuadroAnterior){
+    return cuadroActual === cuadroAnterior;
+}
+
+
 function comenzarJuego(){
+    let cuadroAnterior = 0;
     document.querySelectorAll('.cuadros').forEach(function(cuadro, i){
         cuadro.addEventListener('click', function(){
+            const cuadroActual = document.querySelector(`.cuadro-${i + 1} .parte-trasera img`).src;
             ocultarParteDelantera(i + 1);
             mostrarParteTrasera(i + 1);
+            comprobarCuadrosIguales(cuadroActual, cuadroAnterior)
+            cuadroAnterior = cuadroActual;
         });
     });
 }
