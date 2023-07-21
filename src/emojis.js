@@ -12,3 +12,9 @@ const emojis = [
     '../img/emojis/emoji6.png',
     '../img/emojis/emoji6.png'
 ];
+
+function mezclarArray(array){
+    return array.sort(() => Math.random() - 0.5);
+}
+
+mezclarArray(emojis);

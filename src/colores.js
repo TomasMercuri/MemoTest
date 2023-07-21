@@ -12,3 +12,9 @@ const colores = [
     '../img/colores/color6.png',
     '../img/colores/color6.png',
 ];
+
+function mezclarArray(array){
+    return array.sort(() => Math.random() - 0.5);
+}
+
+mezclarArray(colores);
