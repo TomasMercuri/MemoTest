@@ -87,10 +87,7 @@ function interaccionDelUsuario(cuadro){
             if(cuadrosSonIguales(cuadro, cuadroAnterior)){
                 eliminarCuadros(cuadro, cuadroAnterior);
                 cuadrosEliminados.push(cuadro, cuadroAnterior);
-                if(cuadrosEliminados.length === 12){
-                    setTimeout(ganar, 1500);
-                }
-                setTimeout(jugar, 1000);
+                cuadrosEliminados.length === 12 ? setTimeout(ganar, 1500) : setTimeout(jugar, 1000);
             }else{
                 ocultarImagenDelCuadro(cuadro, cuadroAnterior);
                 cuadro = '';
