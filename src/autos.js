@@ -12,9 +12,3 @@ const autos = [
     '../img/autos/auto6.jpg',
     '../img/autos/auto6.jpg'
 ];
-
-function mezclarArray(array){
-    return array.sort(() => Math.random() - 0.5);
-}
-
-mezclarArray(autos);
