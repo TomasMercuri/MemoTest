@@ -42,3 +42,21 @@ form section input:checked~img {
 .juego .parte-trasera.cuadro-oculto img{
     display: none;
 }
+
+
+/*  */
+@media (max-width: 1000px){
+    header {
+        margin-bottom: 40px;
+    }
+
+    .juego .col {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px){
+    .juego .col {
+        height: 120px;
+    }
+}
