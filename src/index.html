@@ -25,18 +25,18 @@
     <form class="formulario d-flex justify-content-center align-items-center flex-column gap-5">
         <div class="opciones d-flex flex-column gap-3">
             <section class="d-flex justify-content-center align-items-center">
-                    <input type="radio" name="opcion" value="colores" checked>
-                    <img src="../img/memotest-colores.png" width="300" alt="Imagen del MemoTest con colores">
+                <input type="radio" name="opcion" value="colores" checked>
+                <img src="../img/memotest-colores.png" width="300" alt="Imagen del MemoTest con colores">
             </section>
 
             <section class="d-flex justify-content-center align-items-center">
-                    <input type="radio" name="opcion" value="emojis">
-                    <img src="../img/memotest-emojis.png" width="300" alt="Imagen del MemoTest con emojis">
+                <input type="radio" name="opcion" value="emojis">
+                <img src="../img/memotest-emojis.png" width="300" alt="Imagen del MemoTest con emojis">
             </section>
 
             <section class="d-flex justify-content-center align-items-center">
-                    <input type="radio" name="opcion" value="autos">
-                    <img src="../img/memotest-autos.png" width="300" alt="Imagen del MemoTest con autos">
+                <input type="radio" name="opcion" value="autos">
+                <img src="../img/memotest-autos.png" width="300" alt="Imagen del MemoTest con autos">
             </section>
         </div>
         <div>
@@ -120,22 +120,21 @@
 
     <!-- MODAL -->
     <!-- Button trigger modal -->
-    <button id="boton-modal" type="button" class="btn btn-primary visually-hidden" data-bs-toggle="modal" data-bs-target="#exampleModal">Activar Modal</button>
+    <button id="boton-modal" type="button" class="btn btn-primary visually-hidden" data-bs-toggle="modal" data-bs-target="#modal">Activar Modal</button>
     
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1 " aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">GANASTE</h1>
+                    <h1 class="modal-title fs-5" id="modalLabel">GANASTE</h1>
                     <button id="boton-cerrar" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p id="texto-modal"></p>
                 </div>
                 <div class="modal-footer">
-                    <button id="boton-cerrar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button id="boton-reiniciar" type="button" class="btn btn-primary" data-bs-dismiss="modal">Reiniciar</button>
+                    <button id="boton-reiniciar" type="button" class="btn btn-primary" data-bs-dismiss="modal">Jugar otra vez</button>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@ function reiniciarVariables(){
     contadorClicks = 0;
     cuadroAnterior = '';
     cuadrosEliminados = [];
-    turnos = 0;
+    contadorTurnos = 0;
 }
 
 function mostrarOpciones(){
@@ -48,23 +48,17 @@ function mostrarOpciones(){
 }
 
 function mostrarTurnosEnElModal(){
-    document.querySelector('#texto-modal').textContent = `TARDASTE ${turnos} TURNOS EN GANAR.`;
+    document.querySelector('#texto-modal').textContent = `TARDASTE ${contadorTurnos} TURNOS EN GANAR.`;
 }
 
 function mostrarModal(){
-    // Abre el modal
-    // Cambiar texto del modal
     document.querySelector('#boton-modal').click();
 
-    // BOTON-CERRAR
-    document.querySelectorAll('#boton-cerrar').forEach(function(botonCerrar){
-        botonCerrar.addEventListener('click', function(){
-            reiniciarVariables();
-            mostrarOpciones();
-        }); 
+    document.querySelector('#boton-cerrar').addEventListener('click', function(){
+        reiniciarVariables();
+        mostrarOpciones();
     });
 
-    // BOTON-REINICIAR
     document.querySelector('#boton-reiniciar').addEventListener('click', function(){
         reiniciarVariables();
         mostrarTablero();
@@ -117,6 +111,7 @@ function interaccionDelUsuario(cuadro){
         contadorClicks++;
         mostrarImagenDelCuadro(cuadro);
         if(contadorClicks % 2 === 0){
+            contadorTurnos++;
             bloquearInteraccionUsuario();
             if(cuadrosSonIguales(cuadro, cuadroAnterior)){
                 eliminarCuadros(cuadro, cuadroAnterior);
@@ -127,7 +122,6 @@ function interaccionDelUsuario(cuadro){
                 cuadro = '';
                 setTimeout(jugar, 1000);
             }
-            turnos++;
         }
         cuadroAnterior = cuadro;
     }
@@ -148,12 +142,12 @@ const $form = document.querySelector('.formulario');
 let contadorClicks = 0;
 let cuadroAnterior = '';
 let cuadrosEliminados = [];
-let turnos = 0;
+let contadorTurnos = 0;
 
 
 document.querySelector('#comenzar').addEventListener('click', function(){
     ocultarOpciones();
-    mostrarTablero()
+    mostrarTablero();
     cambiarImagenDelCuadro(retornarOpcion());
     jugar();
 });
