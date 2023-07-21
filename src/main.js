@@ -7,7 +7,7 @@ function mostrarTablero(){
 }
 
 function retornarOpcion(){
-    const opcionElegida = $form.opcion.value;
+    let opcionElegida = $form.opcion.value;
     return opcionElegida === 'autos' ? opcionElegida = autos : opcionElegida === 'emojis' ? opcionElegida = emojis : opcion = colores;
 }
 
@@ -36,8 +36,35 @@ function ocultarTablero(){
     document.querySelector('.juego').classList.add('visually-hidden');
 }
 
+function reiniciarVariables(){
+    contadorClicks = 0;
+    cuadroAnterior = '';
+    cuadrosEliminados = [];
+}
+
+function mostrarOpciones(){
+    $form.classList.remove('visually-hidden');
+}
+
 function mostrarModal(){
+    // Abre el modal
     document.querySelector('#boton-modal').click();
+
+    // BOTON-CERRAR
+    document.querySelectorAll('#boton-cerrar').forEach(function(botonCerrar){
+        botonCerrar.addEventListener('click', function(){
+            reiniciarVariables();
+            mostrarOpciones();
+        }); 
+    });
+
+    // BOTON-REINICIAR
+    document.querySelector('#boton-reiniciar').addEventListener('click', function(){
+        reiniciarVariables();
+        mostrarTablero();
+        cambiarImagenDelCuadro(retornarOpcion());
+        jugar();
+    });
 }
 
 
@@ -113,6 +140,7 @@ const $form = document.querySelector('.formulario');
 let contadorClicks = 0;
 let cuadroAnterior = '';
 let cuadrosEliminados = [];
+
 
 document.querySelector('#comenzar').addEventListener('click', function(){
     ocultarOpciones();
