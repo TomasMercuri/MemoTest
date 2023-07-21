@@ -1,3 +1,4 @@
+// BOTON COMENZAR
 function ocultarOpciones(){
     $form.classList.add('visually-hidden');
 }
@@ -138,6 +139,7 @@ function jugar(){
 }
 
 
+// VARIABLES
 const $form = document.querySelector('.formulario');
 let contadorClicks = 0;
 let cuadroAnterior = '';
@@ -145,6 +147,7 @@ let cuadrosEliminados = [];
 let contadorTurnos = 0;
 
 
+// BOTON COMENZAR
 document.querySelector('#comenzar').addEventListener('click', function(){
     ocultarOpciones();
     mostrarTablero();
