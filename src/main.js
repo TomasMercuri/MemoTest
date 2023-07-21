@@ -18,6 +18,32 @@ function cambiarImagenDelCuadro(opcion){
 }
 
 
+// GANAR
+function desocultarCuadros(){
+    document.querySelectorAll('.cuadros').forEach(function(cuadro, i){
+        cuadro = document.querySelector(`.cuadro-${i + 1} .parte-trasera`);
+        cuadro.classList.remove('cuadro-oculto');
+        cuadro.classList.add('visually-hidden');
+    });
+}
+
+function ocultarTablero(){
+    document.querySelector('.juego').classList.add('visually-hidden');
+}
+
+function mostrarModal(){
+    document.querySelector('#boton-modal').click();
+}
+
+
+function ganar(){
+    ocultarTablero();
+    desocultarCuadros();
+    mostrarModal();
+}
+
+
+// JUGAR
 function mostrarImagenDelCuadro(cuadro){
     cuadro.classList.remove('visually-hidden');
 }
@@ -46,6 +72,7 @@ function bloquearInteraccionUsuario(){
     });
 }
 
+
 function interaccionDelUsuario(cuadro){
     if(cuadro !== cuadroAnterior && !cuadrosEliminados.includes(cuadro)){
         contadorClicks++;
@@ -55,6 +82,9 @@ function interaccionDelUsuario(cuadro){
             if(cuadrosSonIguales(cuadro, cuadroAnterior)){
                 eliminarCuadros(cuadro, cuadroAnterior);
                 cuadrosEliminados.push(cuadro, cuadroAnterior);
+                if(cuadrosEliminados.length === 12){
+                    setTimeout(ganar, 1500);
+                }
                 setTimeout(jugar, 1000);
             }else{
                 ocultarImagenDelCuadro(cuadro, cuadroAnterior);
