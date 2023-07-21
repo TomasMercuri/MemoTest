@@ -40,14 +40,20 @@ function reiniciarVariables(){
     contadorClicks = 0;
     cuadroAnterior = '';
     cuadrosEliminados = [];
+    turnos = 0;
 }
 
 function mostrarOpciones(){
     $form.classList.remove('visually-hidden');
 }
 
+function mostrarTurnosEnElModal(){
+    document.querySelector('#texto-modal').textContent = `TARDASTE ${turnos} TURNOS EN GANAR.`;
+}
+
 function mostrarModal(){
     // Abre el modal
+    // Cambiar texto del modal
     document.querySelector('#boton-modal').click();
 
     // BOTON-CERRAR
@@ -71,6 +77,7 @@ function mostrarModal(){
 function ganar(){
     ocultarTablero();
     desocultarCuadros();
+    mostrarTurnosEnElModal();
     mostrarModal();
 }
 
@@ -120,6 +127,7 @@ function interaccionDelUsuario(cuadro){
                 cuadro = '';
                 setTimeout(jugar, 1000);
             }
+            turnos++;
         }
         cuadroAnterior = cuadro;
     }
@@ -140,6 +148,7 @@ const $form = document.querySelector('.formulario');
 let contadorClicks = 0;
 let cuadroAnterior = '';
 let cuadrosEliminados = [];
+let turnos = 0;
 
 
 document.querySelector('#comenzar').addEventListener('click', function(){
