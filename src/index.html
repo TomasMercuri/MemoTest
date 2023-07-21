@@ -16,33 +16,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="title-container container d-flex justify-content-center">
+    <!-- TITULO -->
+    <header class="title-container container d-flex justify-content-center pb-4">
         <h1>MEMOTEST</h1>
-    </div>
+    </header>
 
-    <form class="formulario d-flex justify-content-center align-items-center flex-column">
-        <div class="opciones d-flex">
-            <section>
-                <label>Colores</label>
-                <input type="radio" name="opcion" value="colores" checked>
+    <!-- FORMULARIO -->
+    <form class="formulario d-flex justify-content-center align-items-center flex-column gap-5">
+        <div class="opciones d-flex flex-column gap-3">
+            <section class="d-flex justify-content-center align-items-center">
+                    <input type="radio" name="opcion" value="colores" checked>
+                    <img src="../img/memotest-colores.png" width="300" alt="Imagen del MemoTest con colores">
             </section>
 
-            <section>
-                <label>Emojis</label>
-                <input type="radio" name="opcion" value="emojis">
+            <section class="d-flex justify-content-center align-items-center">
+                    <input type="radio" name="opcion" value="emojis">
+                    <img src="../img/memotest-emojis.png" width="300" alt="Imagen del MemoTest con emojis">
             </section>
 
-            <section>
-                <label>Autos</label>
-                <input type="radio" name="opcion" value="autos">
+            <section class="d-flex justify-content-center align-items-center">
+                    <input type="radio" name="opcion" value="autos">
+                    <img src="../img/memotest-autos.png" width="300" alt="Imagen del MemoTest con autos">
             </section>
         </div>
         <div>
-            <button type="button" id="comenzar">Comenzar</button>
+            <button id="comenzar" type="button" class="btn btn-primary rounded-pill px-4">JUGAR</button>
         </div>
     </form>
 
+    <!-- JUEGO -->
     <div class="juego d-flex justify-content-center align-items-center visually-hidden">
         <div class="container">
             <div class="row">
@@ -129,8 +131,7 @@
                     <button id="boton-cerrar" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id="texto-modal">
-                    </p>
+                    <p id="texto-modal"></p>
                 </div>
                 <div class="modal-footer">
                     <button id="boton-cerrar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
