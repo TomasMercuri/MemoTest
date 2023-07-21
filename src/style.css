@@ -4,9 +4,30 @@ body {
 
 .juego .col {
     border: 1px solid black;
+    background: #222;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 280px;
     padding: 0;
+}
+
+.juego .parte-trasera {
+    background: #555;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.juego .parte-trasera img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.juego .parte-trasera.cuadro-oculto img{
+    display: none;
 }
