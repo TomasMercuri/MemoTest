@@ -7,11 +7,16 @@ function mostrarTablero(){
 }
 
 function retornarOpcion(){
-    return $form.opcion.value;
+    const opcionElegida = $form.opcion.value;
+    return opcionElegida === 'autos' ? opcionElegida = autos : opcionElegida === 'emojis' ? opcionElegida = emojis : opcion = colores;
+}
+
+function mezclarImagenes(imagenes){
+    return imagenes.sort(() => Math.random() - 0.5);
 }
 
 function cambiarImagenDelCuadro(opcion){
-    opcion === 'autos' ? opcion = autos : opcion === 'emojis' ? opcion = emojis : opcion = colores;
+    mezclarImagenes(opcion);
     document.querySelectorAll('.parte-trasera img').forEach(function(img, i){
         img.src = opcion[i];
     });
